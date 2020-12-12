@@ -1,0 +1,10 @@
+table {
+    width: 90%;
+    align-self: center;
+    padding: 5%;
+  }
+
+  th, td {
+    border-bottom: 1px solid #ddd;
+    text-align: left;
+  }
