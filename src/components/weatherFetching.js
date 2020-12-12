@@ -22,7 +22,7 @@ function WeatherFetching({latitude, longitude}) {
     const [isPollution, setIsPollution] = useState(false);
     const [timepoint, setTimepoint] = useState('1607758077');
     
-    const apiKey = '1fe4ba3df9cb5cf86cb9b4e3e26fce0f';
+    const apiKey = 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX';
 
     useEffect(() => {
         

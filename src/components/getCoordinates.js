@@ -6,7 +6,7 @@ import './getCoordinates.css';
 
 const GetCoordinates = () => {
 
-    Geocode.setApiKey("AIzaSyADvy4W0CE_FfTbTIgLYzPO9F5H7sM93Fo");
+    Geocode.setApiKey("ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ");
     Geocode.setLanguage("en");
 
     const [latitude, setLatitude] = useState();
