@@ -5,7 +5,7 @@ import './weather.css';
 
 function Weather(data) {
 
-    // console.log(data);
+    console.log(data);
 
     return (
         <div>

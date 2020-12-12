@@ -20,7 +20,7 @@ function WeatherFetching({latitude, longitude}) {
     const [isForecast, setIsForecast] = useState(false);
     const [isHistory, setIsHistory] = useState(false);
     const [isPollution, setIsPollution] = useState(false);
-    const [timepoint, setTimepoint] = useState(1607758077);
+    const [timepoint, setTimepoint] = useState('1607758077');
     
     const apiKey = '1fe4ba3df9cb5cf86cb9b4e3e26fce0f';
 
@@ -39,7 +39,7 @@ function WeatherFetching({latitude, longitude}) {
           setWeather(result.data.current);
           setIsWeather(true);
           console.log("weather fetched!");
-          alterTime(result.data.dt);
+          alterTime();
           console.log(timepoint);
           setForecast(result.data.daily);
           setIsForecast(true);
@@ -47,7 +47,7 @@ function WeatherFetching({latitude, longitude}) {
 
           
           const historyData = await axios(
-            `https://api.openweathermap.org/data/2.5/onecall/timemachine?lat=${latitude}&lon=${longitude}&dt=1607758077&appid=${apiKey}`,
+            `https://api.openweathermap.org/data/2.5/onecall/timemachine?lat=${latitude}&lon=${longitude}&dt=${timepoint}&appid=${apiKey}`,
           );
           setHistory(historyData.data.hourly);
           setIsHistory(true);
@@ -65,8 +65,10 @@ function WeatherFetching({latitude, longitude}) {
         fetchData();
     }, [latitude, longitude]);
 
-    const alterTime = (currentTime) => {
-      setTimepoint(currentTime - 100800);
+    const alterTime = () => {
+      const dateTime = Date.now();
+      const unixTime = Math.floor(dateTime / 1000) - 84600;
+      setTimepoint(unixTime);
     }
     
     return (
